@@ -36,7 +36,7 @@ def scrape_list(url)
       binding.pry
       raise "Problems with #{cell.text}"
     end
-    puts data
+    # puts data
     ScraperWiki.save_sqlite([:name, :term], data)
   end
 end
