@@ -13,7 +13,7 @@ OpenURI::Cache.cache_path = '.cache'
 @BASE = 'http://www.parliament.gov.sl/dnn5/AboutUs/MembersofParliament.aspx'
 
 def noko_for(url)
-  Nokogiri::HTML(open(url).read) 
+  Nokogiri::HTML(open(url).read)
 end
 
 def scrape_list(url)
@@ -21,7 +21,7 @@ def scrape_list(url)
   noko.css('table.telerik-reTable-1 td img').each do |img|
     cell = img.at_xpath('./following::td')
     rows = cell.text.split("\r\n").map { |t| t.gsub(/[[:space:]]+/, ' ').strip }.reject(&:empty?)
-    data = { 
+    data = {
       name: rows[0],
       image: img.attr('src'),
       term: '2-4',
