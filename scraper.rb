@@ -42,14 +42,6 @@ def scrape_list(url)
   end
 end
 
-term = {
-  id: '2-4',
-  name: 'Fourth Parliament of the Second Republic',
-  start_date: '2012',
-  source: 'http://www.parliament.gov.sl/AboutUs/History.aspx',
-}
-ScraperWiki.save_sqlite([:id], term, 'terms')
-
 # Weird ASP thing going on with browser detection so just cache the page
 # for now
 scrape_list('MembersofParliament.aspx')
