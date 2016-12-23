@@ -44,4 +44,5 @@ end
 
 # Weird ASP thing going on with browser detection so just cache the page
 # for now
+puts "*** scraping local file (within scraper repo), not remote website!"
 scrape_list('MembersofParliament.aspx')
